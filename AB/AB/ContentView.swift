@@ -12,9 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(Color("AccentColor"))
-                .ignoresSafeArea()
+//            Rectangle()
+//                .fill(Color("AccentColor"))
+//                .ignoresSafeArea()
                 
 //            Color("AccentColor")
 //                .ignoresSafeArea()

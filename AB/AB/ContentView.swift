@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var showReason = false
+    @State var showReason:Bool = false
     
     var body: some View {
         ZStack {
@@ -63,10 +63,6 @@ struct ContentView: View {
                                         .cornerRadius(10)
                                         .shadow(color: .gray, radius: 4, x: 0, y: 2)
                                 }
-                                .sheet(isPresented: $showReason) {
-                                ReasonView()
-                            }
-
                             }
                             Spacer()
                                 .frame(width: 60.0)
@@ -76,9 +72,9 @@ struct ContentView: View {
                     .padding(.top, 10.0)
                     Spacer()
                 }
-//                .sheet(isPresented: $showReason) {
-//                    ReasonView()
-//                }
+                .sheet(isPresented: $showReason) {
+                    ReasonView()
+                }
             }
 
     }

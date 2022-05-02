@@ -17,7 +17,7 @@ struct CombinedView: View {
                         .tabItem {
                             Image(systemName: "plus.square.fill.on.square.fill")
                             Text("추가하기")
-                        }
+                        }.tag(0)
                     ContentView()
                         .tabItem {
                             Image(systemName: "dot.circle.and.hand.point.up.left.fill")
@@ -27,13 +27,13 @@ struct CombinedView: View {
 //                                .padding(.top, 10)
                             Text("테스트하기")
                                    
-                        }
+                        }.tag(1)
                     GalleryView()
                         .tabItem {
                             Image(systemName: "square.grid.2x2.fill")
                             Text("모아보기")
                            
-                        }
+                        }.tag(2)
                 }
         .background(Color.red)
        

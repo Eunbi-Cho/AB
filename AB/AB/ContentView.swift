@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var showReason = false
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -32,12 +34,16 @@ struct ContentView: View {
     //                                .font(.largeTitle)
     //                                .fontWeight(.bold)
     //                                .padding(.bottom, -3.0)
-                                Image("kurly")
-                                    .resizable()
-                                    .frame(width: 260, height: 560)
-                                    .scaledToFit()
-                                    .cornerRadius(10)
-                                    .shadow(color: .gray, radius: 4, x: 0, y: 2)
+                                Button (action: {
+                                        showReason.toggle()
+                                }) {
+                                    Image("kurly")
+                                        .resizable()
+                                        .frame(width: 260, height: 560)
+                                        .scaledToFit()
+                                        .cornerRadius(10)
+                                        .shadow(color: .gray, radius: 4, x: 0, y: 2)
+                                }
                             }
                             Spacer()
                                 .frame(width: 20.0)
@@ -46,12 +52,21 @@ struct ContentView: View {
     //                                .font(.largeTitle)
     //                                .fontWeight(.bold)
     //                                .padding(.bottom, -3.0)
-                                Image("musinsa")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 260, height: 560)
-                                    .cornerRadius(10)
-                                    .shadow(color: .gray, radius: 4, x: 0, y: 2)
+                                Button (action: {
+                                        showReason.toggle()
+                                    print("sheet 나옴")
+                                }) {
+                                    Image("musinsa")
+                                        .resizable()
+                                        .frame(width: 260, height: 560)
+                                        .scaledToFit()
+                                        .cornerRadius(10)
+                                        .shadow(color: .gray, radius: 4, x: 0, y: 2)
+                                }
+                                .sheet(isPresented: $showReason) {
+                                ReasonView()
+                            }
+
                             }
                             Spacer()
                                 .frame(width: 60.0)
@@ -61,7 +76,11 @@ struct ContentView: View {
                     .padding(.top, 10.0)
                     Spacer()
                 }
+//                .sheet(isPresented: $showReason) {
+//                    ReasonView()
+//                }
             }
+
     }
 }
 

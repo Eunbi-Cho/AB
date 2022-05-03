@@ -7,8 +7,26 @@
 
 import SwiftUI
 
+//struct PresentationKey: EnvironmentKey {
+//    static let defaultValue: [Binding<Bool>] = []
+//}
+
+//extension EnvironmentValues {
+//    var presentationMode: [Binding<Bool>] {
+//        get { return self[PresentationKey] }
+//        set { self[PresentationKey] = newValue }
+//    }
+//}
+
 struct ContentView: View {
     @State var showReason:Bool = false
+    
+//    extension EnvironmentValues {
+//        var presentationMode: [Binding<Bool>] {
+//            get { return self[PresentationKey] }
+//            set { self[PresentationKey] = newValue }
+//        }
+//    }
     
     var body: some View {
         ZStack {
@@ -73,7 +91,8 @@ struct ContentView: View {
                 Spacer()
             }
             .sheet(isPresented: $showReason) {
-                ReasonView()
+                ReasonView(showReason:$showReason)
+//                    .environment(\.presentations, presentationMode + [$showReason])
             }
         }
         

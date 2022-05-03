@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CommentView: View {
     @State private var selectAAmount:Float = 0.2
+    @Binding var showReason:Bool
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -18,7 +19,11 @@ struct CommentView: View {
                     HStack {
                         Spacer()
                         Button( action:
-                                    {presentationMode.wrappedValue.dismiss()
+                                    {
+//                            presentationMode.ForEach {
+//                                $0.wrappedValue = false}
+                            showReason = false
+                            presentationMode.wrappedValue.dismiss()
                         }){
                             Text("다음")
                                 .fontWeight(.bold)
@@ -52,45 +57,46 @@ struct CommentView: View {
                         .frame(width: 350, height: 65)
                         .foregroundColor(Color("MainGray"))
                         .cornerRadius(3)
-                        .opacity(0.3)
+                        .padding(.bottom, 10.0)
                     ScrollView(.vertical, showsIndicators: false) {
                         Rectangle()
                             .frame(width: 350, height: 65)
                             .foregroundColor(Color("MainGray"))
                             .cornerRadius(3)
-                            .opacity(0.3)
+                            .padding(.bottom, 10.0)
                         Rectangle()
                             .frame(width: 350, height: 65)
                             .foregroundColor(Color("MainGray"))
                             .cornerRadius(3)
-                            .opacity(0.3)
+                            .padding(.bottom, 10.0)
                         Rectangle()
                             .frame(width: 350, height: 65)
                             .foregroundColor(Color("MainGray"))
                             .cornerRadius(3)
-                            .opacity(0.3)
+                            .padding(.bottom, 10.0)
                         Rectangle()
                             .frame(width: 350, height: 65)
                             .foregroundColor(Color("MainGray"))
                             .cornerRadius(3)
-                            .opacity(0.3)
+                            .padding(.bottom, 10.0)
                         Rectangle()
                             .frame(width: 350, height: 65)
                             .foregroundColor(Color("MainGray"))
                             .cornerRadius(3)
-                            .opacity(0.3)
+                            .padding(.bottom, 10.0)
+                        Spacer()
+                            .frame(height: 20)
                     }
-                    .frame(height: 320)
                 }
-                .padding(.top, 80.0)
+                .padding(.top, 20.0)
             }
 //        }
     }
 }
     
-    struct CommentView_Previews: PreviewProvider {
-        static var previews: some View {
-            CommentView()
-        }
-    }
+//    struct CommentView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            CommentView(showReason: <#Binding<Bool>#>)
+//        }
+//    }
 

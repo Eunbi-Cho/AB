@@ -30,12 +30,8 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            //            Rectangle()
-            //                .fill(Color("AccentColor"))
-            //                .ignoresSafeArea()
-            
-            //            Color("AccentColor")
-            //                .ignoresSafeArea()
+            Color("Gray")
+                .ignoresSafeArea()
             VStack {
                 Text("어떤 디자인이 더 유저 친화적인가요?")
                     .font(.title3)

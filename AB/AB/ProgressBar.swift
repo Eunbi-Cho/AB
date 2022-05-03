@@ -30,15 +30,16 @@ struct ProgressBar: View {
                 Rectangle()
                     .frame(width: geometry.size.width , height: geometry.size.height)
                     .foregroundColor(Color("MainBlue"))
-                    .cornerRadius(1)
+                    .cornerRadius(10)
                 HStack {
                     Rectangle()
                         .frame(width: min(CGFloat(self.value)*geometry.size.width, geometry.size.width), height: geometry.size.height)
                         .foregroundColor(Color("MainRed"))
+                        .cornerRadius(10)
                     MySquare()
                         .padding(.leading, -10.0)
                         .foregroundColor(Color("MainRed"))
-                }
+                    }
                 }
             }
     }

@@ -35,17 +35,12 @@ struct CombinedView: View {
                     
                 }.tag(2)
         }
-        .background(Color.red)
-        
-        
         .onAppear() {
-            //                    UITabBar.appearance().barTintColor = .blue
             let appearance = UITabBarAppearance()
             appearance.backgroundColor = UIColor(Color.white)
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
-        
         .accentColor(.black)
     }
 }

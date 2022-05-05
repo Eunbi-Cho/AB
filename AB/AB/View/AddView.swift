@@ -58,12 +58,13 @@ struct AddView: View {
     @State var question = ""
     @State var pickedImageA: Image?
     @State var pickedImageB: Image?
+    @State var comment = ""
     @State private var showingImagePickerA = false
     @State private var showingImagePickerB = false
     @Binding var tests: [Tests]
     
     func appendTest() {
-        let addTest = Tests(question: question, ImageA: pickedImageA!, ImageB: pickedImageB!)
+        let addTest = Tests(question: question, ImageA: pickedImageA!, ImageB: pickedImageB!, comment: [""] )
         tests.append(addTest)
         question = ""
         pickedImageA = nil

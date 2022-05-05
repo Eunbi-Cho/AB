@@ -25,8 +25,8 @@ struct CommentView: View {
                     Spacer()
                     Button( action:
                                 {
-                        showReason = false
                         presentationMode.wrappedValue.dismiss()
+                        showReason = false
                         indexOfStep = indexOfStep + 1
                     }){
                         Text("다음")
@@ -35,32 +35,39 @@ struct CommentView: View {
                 }
                 .padding(.bottom, 20.0)
                 if Selected == "A" {
-                    HStack {
-                        Image("kurly")
-                            .resizable()
-                            .frame(width: 130, height: 280)
-                            .scaledToFit()
-                            .shadow(color: .gray, radius: 1, x: 0, y: 1)
-                            .border(Color("A"))
-                        Image("musinsa")
-                            .resizable()
-                            .frame(width: 130, height: 280)
-                            .scaledToFit()
-                            .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                    if indexOfStep > tests.count - 1 {
+                        
+                    }else {
+                        HStack {
+                            tests[indexOfStep].ImageA
+                                .resizable()
+                                .frame(width: 130, height: 280)
+                                .scaledToFit()
+                                .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                                .border(Color("A"))
+                            tests[indexOfStep].ImageB
+                                .resizable()
+                                .frame(width: 130, height: 280)
+                                .scaledToFit()
+                                .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                        }
                     }
                 }else {
-                    HStack {
-                        Image("kurly")
-                            .resizable()
-                            .frame(width: 130, height: 280)
-                            .scaledToFit()
-                            .shadow(color: .gray, radius: 1, x: 0, y: 1)
-                        Image("musinsa")
-                            .resizable()
-                            .frame(width: 130, height: 280)
-                            .scaledToFit()
-                            .shadow(color: .gray, radius: 1, x: 0, y: 1)
-                            .border(Color("B"))
+                    if indexOfStep > tests.count - 1 {
+                    }else {
+                        HStack {
+                            tests[indexOfStep].ImageA
+                                .resizable()
+                                .frame(width: 130, height: 280)
+                                .scaledToFit()
+                                .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                            tests[indexOfStep].ImageB
+                                .resizable()
+                                .frame(width: 130, height: 280)
+                                .scaledToFit()
+                                .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                                .border(Color("B"))
+                        }
                     }
                 }
                 Spacer()
@@ -75,44 +82,37 @@ struct CommentView: View {
                         .fontWeight(.bold)
                         .padding(.leading, 20.0)
                     Text("\(reason)")
-                        .padding(.all, 10.0)
+                        .padding(.horizontal, 10.0)
+                        .padding(.vertical, 20)
                         .font(.body)
                         .multilineTextAlignment(.leading)
                         .frame(width: 310, alignment: .leading)
                         .background(Color(.white))
                         .cornerRadius(10)
-                        .padding(.all, 10.0)
-                        .foregroundColor(Color("\(Selected)"))
+                        .padding(.all, 2)
                 }
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    Rectangle()
-                        .frame(width: 350, height: 65)
-                        .foregroundColor(Color(.white))
-                        .cornerRadius(10)
-                        .padding(.bottom, 10.0)
-                    Rectangle()
-                        .frame(width: 350, height: 65)
-                        .foregroundColor(Color(.white))
-                        .cornerRadius(10)
-                        .padding(.bottom, 10.0)
-                    Rectangle()
-                        .frame(width: 350, height: 65)
-                        .foregroundColor(Color(.white))
-                        .cornerRadius(10)
-                        .padding(.bottom, 10.0)
-                    Rectangle()
-                        .frame(width: 350, height: 65)
-                        .foregroundColor(Color(.white))
-                        .cornerRadius(10)
-                        .padding(.bottom, 10.0)
-                    Rectangle()
-                        .frame(width: 350, height: 65)
-                        .foregroundColor(Color(.white))
-                        .cornerRadius(10)
-                        .padding(.bottom, 10.0)
-                    Spacer()
-                        .frame(height: 20)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        if indexOfStep > tests.count - 1 {
+                        }else {
+                            ForEach(0..<tests[indexOfStep].comment.count, id:\.self) {i in
+                            HStack {
+                                Text("B")
+                                    .foregroundColor(Color("B"))
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .padding(.leading, 20.0)
+                                Text("\(tests[indexOfStep].comment[i])")
+                                    .padding(.horizontal, 10.0)
+                                    .padding(.vertical, 20)
+                                    .font(.body)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(width: 310, alignment: .leading)
+                                    .background(Color(.white))
+                                    .cornerRadius(10)
+                                    .padding(.all, 2)
+                            }
+                        }
+                    }
                 }
             }
             .padding(.top, 20.0)

@@ -7,44 +7,34 @@
 
 import SwiftUI
 
-//struct PresentationKey: EnvironmentKey {
-//    static let defaultValue: [Binding<Bool>] = []
-//}
-
-//extension EnvironmentValues {
-//    var presentationMode: [Binding<Bool>] {
-//        get { return self[PresentationKey] }
-//        set { self[PresentationKey] = newValue }
-//    }
-//}
 
 struct ContentView: View {
     @State var showReason:Bool = false
     @State var Selected = ""
-    //@State var tests: [Tests] = [Tests(question: "어떤 UI가 더 유저 친화적인가요?", ImageA: Image("kurly"), ImageB: Image("musinsa"))]
     @Binding var tests: [Tests]
     @Binding var indexOfStep:Int
-//    extension EnvironmentValues {
-//        var presentationMode: [Binding<Bool>] {
-//            get { return self[PresentationKey] }
-//            set { self[PresentationKey] = newValue }
-//        }
-//    }
-    
-    
     
     var body: some View {
         ZStack {
             Color("Gray")
                 .ignoresSafeArea()
-//            ForEach(0..<tests.count, id: \.self) { i in
+            if indexOfStep > tests.count - 1 {
+                VStack {
+                    Text("👏🏻")
+                        .font(.system(size:100))
+                        .padding(.bottom, 10.0)
+                    Text("모든 테스트를 완료했어요.")
+                        .padding(.bottom, 5.0)
+                    Text("새로운 테스트를 만들어보세요!")
+                }
+            }else {
                 VStack {
                     Text("\(tests[indexOfStep].question)")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.leading)
-                            .padding(.top, 40)
-                            .padding(.bottom, 10)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.leading)
+                        .padding(.top, 40)
+                        .padding(.bottom, 10)
                     Divider()
                         .frame(width:350)
                         .background(.black)
@@ -55,10 +45,6 @@ struct ContentView: View {
                             Spacer()
                                 .frame(width: 60.0)
                             VStack {
-                                //                            Text("A")
-                                //                                .font(.largeTitle)
-                                //                                .fontWeight(.bold)
-                                //                                .padding(.bottom, -3.0)
                                 Button (action: {
                                     showReason.toggle()
                                     Selected = "A"
@@ -74,10 +60,6 @@ struct ContentView: View {
                             Spacer()
                                 .frame(width: 20.0)
                             VStack {
-                                //                            Text("B")
-                                //                                .font(.largeTitle)
-                                //                                .fontWeight(.bold)
-                                //                                .padding(.bottom, -3.0)
                                 Button (action: {
                                     showReason.toggle()
                                     Selected = "B"
@@ -97,10 +79,9 @@ struct ContentView: View {
                     }
                     Spacer()
                 }
-//            }
-            .sheet(isPresented: $showReason) {
-                ReasonView(Selected: $Selected, showReason:$showReason, tests: $tests, indexOfStep: $indexOfStep)
-//                    .environment(\.presentations, presentationMode + [$showReason])
+                .sheet(isPresented: $showReason) {
+                    ReasonView(Selected: $Selected, showReason:$showReason, tests: $tests, indexOfStep: $indexOfStep)
+                }
             }
         }
         

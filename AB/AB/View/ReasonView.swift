@@ -64,23 +64,27 @@ struct ReasonView: View {
                             .opacity(self.reason.isEmpty ? 0.25 : 1)
                             .padding(.horizontal, 20.0)
                     }
-                    HStack {
-                        Spacer()
-                        Image("kurly")
-                            .resizable()
-                            .frame(width: 130/1.2, height: 280/1.2)
-                            .scaledToFit()
-                            .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                    if indexOfStep > tests.count - 1 {
                         
-                        Image("musinsa")
-                            .resizable()
-                            .frame(width: 130/1.2, height: 280/1.2)
-                            .scaledToFit()
-                            .shadow(color: .gray, radius: 1, x: 0, y: 1)
-                        Spacer()
-                            .frame(width:20)
+                    }else {
+                        HStack {
+                            Spacer()
+                            tests[indexOfStep].ImageA
+                                .resizable()
+                                .frame(width: 130/1.2, height: 280/1.2)
+                                .scaledToFit()
+                                .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                            
+                            tests[indexOfStep].ImageB
+                                .resizable()
+                                .frame(width: 130/1.2, height: 280/1.2)
+                                .scaledToFit()
+                                .shadow(color: .gray, radius: 1, x: 0, y: 1)
+                            Spacer()
+                                .frame(width:20)
+                        }
+                        .padding(.bottom, 20.0)
                     }
-                    .padding(.bottom, 20.0)
                 }
                 .navigationBarHidden(true)
             }

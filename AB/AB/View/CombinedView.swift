@@ -9,26 +9,24 @@ import SwiftUI
 
 struct CombinedView: View {
     @State private var selection = 1
+    @State var tests: [Tests] = testList.myTest
+    @State var indexOfStep: Int = 0
     
     var body: some View {
-        
+    
         TabView(selection: $selection) {
-            AddView()
+            AddView(tests: self.$tests)
                 .tabItem {
                     Image(systemName: "plus.square.fill.on.square.fill")
                     Text("추가하기")
                 }.tag(0)
-            ContentView()
+            ContentView(tests: self.$tests, indexOfStep: $indexOfStep)
                 .tabItem {
                     Image(systemName: "dot.circle.and.hand.point.up.left.fill")
-                    //                                .resizable()
-                    //                                .aspectRatio(contentMode: .fit)
-                    //                                .frame(width: 10, height: 10)
-                    //                                .padding(.top, 10)
                     Text("테스트하기")
                     
                 }.tag(1)
-            GalleryView()
+            GalleryView(tests: self.$tests, selection: $selection, indexOfStep: $indexOfStep)
                 .tabItem {
                     Image(systemName: "square.grid.2x2.fill")
                     Text("모아보기")
@@ -45,8 +43,8 @@ struct CombinedView: View {
     }
 }
 
-struct CombinedView_Previews: PreviewProvider {
-    static var previews: some View {
-        CombinedView()
-    }
-}
+//struct CombinedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CombinedView()
+//    }
+//}

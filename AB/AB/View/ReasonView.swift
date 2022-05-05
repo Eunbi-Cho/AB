@@ -11,7 +11,10 @@ import SwiftUI
 struct ReasonView: View {
     @State var placeholderText: String = "ex) 할인을 알려줘 구매를 유도하기 때문에"
     @State var reason = ""
+    @Binding var Selected: String
     @Binding var showReason:Bool
+    @Binding var tests: [Tests]
+    @Binding var indexOfStep: Int
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -33,28 +36,21 @@ struct ReasonView: View {
                     Spacer()
                         .frame(height: 20.0)
                     HStack {
-                        Text("A")
+                        Text("\(Selected)")
                             .font(.title2)
                             .fontWeight(.black)
-                            .foregroundColor(Color("MainRed"))
+                            .foregroundColor(Color("\(Selected)"))
                         Text("를 선택한 이유")
                             .font(.title2)
                             .fontWeight(.black)
                         Spacer()
-                        NavigationLink(destination: CommentView(showReason:$showReason ).navigationBarHidden(true)
+                        NavigationLink(destination: CommentView(Selected:$Selected, showReason:$showReason, reason: $reason, tests: $tests, indexOfStep: $indexOfStep).navigationBarHidden(true)
                         ) {
                             Image(systemName: "arrow.up.circle.fill")
                                 .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
                                 .foregroundColor(.black)
                                 .frame(width: 30, height: 30)
                         }
-                        //                    Button(action:
-                        //                            {presentationMode.wrappedValue.dismiss()}) {
-                        //                        Image(systemName: "arrow.up.circle.fill")
-                        //                            .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
-                        //                            .foregroundColor(.black)
-                        //                            .frame(width: 30, height: 30)
-                        //                    }
                     }
                     .padding([.leading, .bottom, .trailing], 20.0)
                     ZStack {
@@ -62,11 +58,11 @@ struct ReasonView: View {
                             TextEditor(text: $placeholderText)
                                 .foregroundColor(.gray)
                                 .disabled(true)
-                                .padding(.leading, 20.0)
+                                .padding(.horizontal, 20.0)
                         }
                         TextEditor(text: $reason)
                             .opacity(self.reason.isEmpty ? 0.25 : 1)
-                            .padding(.leading, 20.0)
+                            .padding(.horizontal, 20.0)
                     }
                     HStack {
                         Spacer()
@@ -75,7 +71,6 @@ struct ReasonView: View {
                             .frame(width: 130/1.2, height: 280/1.2)
                             .scaledToFit()
                             .shadow(color: .gray, radius: 1, x: 0, y: 1)
-                        //                    .border(Color("MainRed"))
                         
                         Image("musinsa")
                             .resizable()

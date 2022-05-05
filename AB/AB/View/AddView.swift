@@ -15,24 +15,20 @@ struct SUImagePicker: UIViewControllerRepresentable {
     private var presentationMode // 해당 뷰컨트롤러의 노출 여부
     let sourceType: UIImagePickerController.SourceType
     let imagePicked: (UIImage) -> () // 이미지가 선택됐을때 결과 호출
-    
 
-    
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         
         let parent: SUImagePicker
-        
+    
         init(parent: SUImagePicker) {
             self.parent = parent
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            
             if let image = info[.originalImage] as? UIImage {
                 parent.imagePicked(image)
                 parent.presentationMode.wrappedValue.dismiss()
             }
-            
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -46,20 +42,16 @@ struct SUImagePicker: UIViewControllerRepresentable {
     
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
-        
         let picker = UIImagePickerController()
-        
         picker.delegate = context.coordinator
-        
         return picker
-        
     }
     
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-        
     }
 
 }
+
 
 struct AddView: View {
     @State var placeholder: String = "ex) 어떤 디자인이 더 유저 친화적인가요?"
@@ -68,7 +60,16 @@ struct AddView: View {
     @State var pickedImageB: Image?
     @State private var showingImagePickerA = false
     @State private var showingImagePickerB = false
+    @Binding var tests: [Tests]
     
+    func appendTest() {
+        let addTest = Tests(question: question, ImageA: pickedImageA!, ImageB: pickedImageB!)
+        tests.append(addTest)
+        question = ""
+        pickedImageA = nil
+        pickedImageB = nil
+    }
+
     var body: some View {
         ZStack {
             Color("Gray")
@@ -94,7 +95,7 @@ struct AddView: View {
                         .padding(.top, 40)
                     Spacer()
                 }
-                .padding(.bottom, 10.0)
+                .padding(.bottom, 20.0)
                 TextField("ex) 어떤 디자인이 더 유저 친화적인가요?", text: $question)
                     .padding([.top, .leading, .bottom], 20.0)
                     .background(Color(.white))
@@ -122,19 +123,19 @@ struct AddView: View {
                     Spacer()
                 }
                 .padding(.top, 40.0)
-                .padding(.bottom, 10)
+                .padding(.bottom, 20)
                 HStack {
                     ZStack {
                         Text("A")
                             .font(.title)
                             .fontWeight(.black)
-                            .foregroundColor(Color("MainRed"))
+                            .foregroundColor(Color("A"))
                         Image(systemName: "plus.square.fill")
                                 .offset(x:45, y: -120)
-                                .foregroundColor(Color("MainRed"))
+                                .foregroundColor(Color("A"))
                         Image(systemName: "plus.square.fill")
                             .offset(x:45, y: -120)
-                            .foregroundColor(Color("MainRed"))
+                            .foregroundColor(Color("A"))
                         pickedImageA?
                             .resizable()
                             .scaledToFit()
@@ -162,10 +163,10 @@ struct AddView: View {
                         Text("B")
                             .font(.title)
                             .fontWeight(.black)
-                            .foregroundColor(Color("MainBlue"))
+                            .foregroundColor(Color("B"))
                         Image(systemName: "plus.square.fill")
                                 .offset(x:45, y: -120)
-                                .foregroundColor(Color("MainBlue"))
+                                .foregroundColor(Color("B"))
                         pickedImageB?
                             .resizable()
                             .scaledToFit()
@@ -193,21 +194,21 @@ struct AddView: View {
                 .padding(.bottom, 40.0)
                 Spacer()
                 Button(action: {
-                    //action
+                    appendTest()
                 }) {
                     Text("테스트 등록하기")
                         .frame(width: 350, height: 50)
                         .foregroundColor(.white)
                         .background(.black)
                         .cornerRadius(10)
-                }
-            }.padding(.bottom, 40.0)
+                }.padding(.bottom, 40.0)
+            }
         }
     }
 }
 
-struct AddView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddView()
-    }
-}
+//struct AddView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddView()
+//    }
+//}

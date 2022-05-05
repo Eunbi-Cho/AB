@@ -23,6 +23,12 @@
 		B2634653281F7C71000C70F4 /* ReasonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2634652281F7C71000C70F4 /* ReasonView.swift */; };
 		B26347F928201B8F0060D5B6 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26347F828201B8F0060D5B6 /* ProgressBar.swift */; };
 		B26348002823E5090060D5B6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26347FF2823E5090060D5B6 /* DataModel.swift */; };
+		B2634803282426010060D5B6 /* watcha.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B2634801282426000060D5B6 /* watcha.PNG */; };
+		B2634804282426010060D5B6 /* netflix.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B2634802282426010060D5B6 /* netflix.PNG */; };
+		B2634807282428F50060D5B6 /* gallery.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B2634805282428F40060D5B6 /* gallery.PNG */; };
+		B2634808282428F50060D5B6 /* list.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B2634806282428F50060D5B6 /* list.PNG */; };
+		B263480B28242BA40060D5B6 /* setting.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B263480928242BA40060D5B6 /* setting.PNG */; };
+		B263480C28242BA40060D5B6 /* appstore.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B263480A28242BA40060D5B6 /* appstore.PNG */; };
 		B2907BE7281FF4DE0061FA78 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2907BE6281FF4DE0061FA78 /* CommentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +69,12 @@
 		B2634652281F7C71000C70F4 /* ReasonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonView.swift; sourceTree = "<group>"; };
 		B26347F828201B8F0060D5B6 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		B26347FF2823E5090060D5B6 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		B2634801282426000060D5B6 /* watcha.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watcha.PNG; sourceTree = "<group>"; };
+		B2634802282426010060D5B6 /* netflix.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = netflix.PNG; sourceTree = "<group>"; };
+		B2634805282428F40060D5B6 /* gallery.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gallery.PNG; sourceTree = "<group>"; };
+		B2634806282428F50060D5B6 /* list.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.PNG; sourceTree = "<group>"; };
+		B263480928242BA40060D5B6 /* setting.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.PNG; sourceTree = "<group>"; };
+		B263480A28242BA40060D5B6 /* appstore.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.PNG; sourceTree = "<group>"; };
 		B2907BE6281FF4DE0061FA78 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,8 +165,14 @@
 		B2634647281A8AF4000C70F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B263480A28242BA40060D5B6 /* appstore.PNG */,
+				B263480928242BA40060D5B6 /* setting.PNG */,
+				B2634802282426010060D5B6 /* netflix.PNG */,
+				B2634801282426000060D5B6 /* watcha.PNG */,
 				B2634648281A8B15000C70F4 /* kurly.PNG */,
 				B2634646281A8AE4000C70F4 /* musinsa.PNG */,
+				B2634805282428F40060D5B6 /* gallery.PNG */,
+				B2634806282428F50060D5B6 /* list.PNG */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -279,8 +297,14 @@
 			files = (
 				B2634621281A840B000C70F4 /* Preview Assets.xcassets in Resources */,
 				B263461E281A840B000C70F4 /* Assets.xcassets in Resources */,
+				B263480B28242BA40060D5B6 /* setting.PNG in Resources */,
+				B2634807282428F50060D5B6 /* gallery.PNG in Resources */,
 				B2634644281A8ADD000C70F4 /* musinsa.PNG in Resources */,
+				B2634803282426010060D5B6 /* watcha.PNG in Resources */,
+				B2634804282426010060D5B6 /* netflix.PNG in Resources */,
+				B263480C28242BA40060D5B6 /* appstore.PNG in Resources */,
 				B2634649281A8B15000C70F4 /* kurly.PNG in Resources */,
+				B2634808282428F50060D5B6 /* list.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,7 @@
 		B2634808282428F50060D5B6 /* list.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B2634806282428F50060D5B6 /* list.PNG */; };
 		B263480B28242BA40060D5B6 /* setting.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B263480928242BA40060D5B6 /* setting.PNG */; };
 		B263480C28242BA40060D5B6 /* appstore.PNG in Resources */ = {isa = PBXBuildFile; fileRef = B263480A28242BA40060D5B6 /* appstore.PNG */; };
+		B263481228243EAB0060D5B6 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = B263481128243EAB0060D5B6 /* Splash.png */; };
 		B2907BE7281FF4DE0061FA78 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2907BE6281FF4DE0061FA78 /* CommentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		B2634806282428F50060D5B6 /* list.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.PNG; sourceTree = "<group>"; };
 		B263480928242BA40060D5B6 /* setting.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.PNG; sourceTree = "<group>"; };
 		B263480A28242BA40060D5B6 /* appstore.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.PNG; sourceTree = "<group>"; };
+		B263481128243EAB0060D5B6 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		B2907BE6281FF4DE0061FA78 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 		B2634647281A8AF4000C70F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B263481128243EAB0060D5B6 /* Splash.png */,
 				B263480A28242BA40060D5B6 /* appstore.PNG */,
 				B263480928242BA40060D5B6 /* setting.PNG */,
 				B2634802282426010060D5B6 /* netflix.PNG */,
@@ -304,6 +307,7 @@
 				B2634804282426010060D5B6 /* netflix.PNG in Resources */,
 				B263480C28242BA40060D5B6 /* appstore.PNG in Resources */,
 				B2634649281A8B15000C70F4 /* kurly.PNG in Resources */,
+				B263481228243EAB0060D5B6 /* Splash.png in Resources */,
 				B2634808282428F50060D5B6 /* list.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

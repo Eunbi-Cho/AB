@@ -7,6 +7,33 @@
 
 import SwiftUI
 
+struct SplashView: View {
+
+    @State var isActive:Bool = false
+    
+    var body: some View {
+        VStack {
+            if self.isActive {
+                CombinedView()
+            } else {
+                Image("Splash")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 390.0, height: 844.0)
+                    .ignoresSafeArea()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
+        }
+    }
+    
+}
+
 struct CombinedView: View {
     @State private var selection = 1
     @State var tests: [Tests] = testList.myTest

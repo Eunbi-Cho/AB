@@ -12,7 +12,7 @@ struct ABApp: App {
     
     var body: some Scene {
         WindowGroup {
-            CombinedView()
+            SplashView()
         }
     }
 }

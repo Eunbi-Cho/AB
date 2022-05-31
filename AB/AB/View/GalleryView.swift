@@ -76,6 +76,8 @@ struct GalleryView: View {
                                         .rotationEffect(Angle(degrees: 3), anchor: .center)
                                 }
                             }
+                            .padding(.top, 10.0)
+                            .padding(.bottom, 20)
                         }
                     })
                 }

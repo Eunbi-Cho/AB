@@ -7,37 +7,49 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     @State var showReason:Bool = false
+    @State var Selected = ""
+    @Binding var tests: [Tests]
+    @Binding var indexOfStep:Int
     
     var body: some View {
         ZStack {
-            Rectangle()
-                .fill(Color("AccentColor"))
+            Color("Gray")
                 .ignoresSafeArea()
-                
-//            Color("AccentColor")
-//                .ignoresSafeArea()
+            if indexOfStep > tests.count - 1 {
                 VStack {
-                    Text("어떤 디자인이 더 유저 친화적인가요?")
+                    Text("👏🏻")
+                        .font(.system(size:100))
+                        .padding(.bottom, 10.0)
+                    Text("모든 테스트를 완료했어요.")
+                        .padding(.bottom, 5.0)
+                    Text("새로운 테스트를 만들어보세요!")
+                }
+            }else {
+                VStack {
+                    Text("\(tests[indexOfStep].question)")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 40.0)
-                        .frame(width: 350)
+                        .multilineTextAlignment(.leading)
+                        .padding(.top, 40)
+                        .padding(.bottom, 10)
+                    Divider()
+                        .frame(width:350)
+                        .background(.black)
+                        .opacity(0.2)
+                        .padding(.bottom, 10.0)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             Spacer()
                                 .frame(width: 60.0)
                             VStack {
-    //                            Text("A")
-    //                                .font(.largeTitle)
-    //                                .fontWeight(.bold)
-    //                                .padding(.bottom, -3.0)
                                 Button (action: {
-                                        showReason.toggle()
+                                    showReason.toggle()
+                                    Selected = "A"
                                 }) {
-                                    Image("kurly")
+                                    tests[indexOfStep].ImageA
                                         .resizable()
                                         .frame(width: 260, height: 560)
                                         .scaledToFit()
@@ -48,15 +60,11 @@ struct ContentView: View {
                             Spacer()
                                 .frame(width: 20.0)
                             VStack {
-    //                            Text("B")
-    //                                .font(.largeTitle)
-    //                                .fontWeight(.bold)
-    //                                .padding(.bottom, -3.0)
                                 Button (action: {
-                                        showReason.toggle()
-                                    print("sheet 나옴")
+                                    showReason.toggle()
+                                    Selected = "B"
                                 }) {
-                                    Image("musinsa")
+                                    tests[indexOfStep].ImageB
                                         .resizable()
                                         .frame(width: 260, height: 560)
                                         .scaledToFit()
@@ -69,19 +77,19 @@ struct ContentView: View {
                         }
                         .frame(height: 600)
                     }
-                    .padding(.top, 10.0)
                     Spacer()
                 }
                 .sheet(isPresented: $showReason) {
-                    ReasonView()
+                    ReasonView(Selected: $Selected, showReason:$showReason, tests: $tests, indexOfStep: $indexOfStep)
                 }
             }
-
+        }
+        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

@@ -1,6 +1,9 @@
 # AB
 <img width="1083" alt="스크린샷 2022-06-05 오후 4 18 34" src="https://user-images.githubusercontent.com/98628614/172040073-c0eb3670-a235-4a09-a757-a8e99c2fdbd9.png">
-https://user-images.githubusercontent.com/98628614/172042703-51a19688-90af-447f-99e2-da54a6da27a8.mp4
+
+https://user-images.githubusercontent.com/98628614/172042836-0bece345-ee2f-4de4-b555-30efc047f458.mp4
+
+
 
 ## 🎨 디자인 피드백 어디서 받을까?
 

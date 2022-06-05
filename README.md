@@ -26,8 +26,7 @@ AB 테스트는 두 가지 이상의 시안 중 UI UX 최적안을 선정하기 
   - 두가지 디자인(Hi-fi, Lo-fi) 시안 중 투표
   - 더 나은 디자인이라고 생각한 근거 쓰기
   - 투표 결과 및 다른 사람의 근거 확인하기
-  <img src="https://user-images.githubusercontent.com/98628614/172040037-a1fd49a1-efec-4ee0-a483-b35f7d3e483b.jpeg" width="444" height="960">
-  ![테스트 결과확인](https://user-images.githubusercontent.com/98628614/172040052-f7f239d6-e034-44b8-b275-bb9ac3ed790d.jpeg)
+  ![테스트](https://user-images.githubusercontent.com/98628614/172042749-0240af50-03d7-409d-af24-54ae552b3437.jpeg) ![테스트 결과확인](https://user-images.githubusercontent.com/98628614/172040052-f7f239d6-e034-44b8-b275-bb9ac3ed790d.jpeg)
 
 
 ### 2) 테스트 등록 기능

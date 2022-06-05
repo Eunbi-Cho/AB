@@ -1,8 +1,7 @@
 # AB
 <img width="1083" alt="스크린샷 2022-06-05 오후 4 18 34" src="https://user-images.githubusercontent.com/98628614/172040073-c0eb3670-a235-4a09-a757-a8e99c2fdbd9.png">
-<p align="center">
 https://user-images.githubusercontent.com/98628614/172042219-c826693e-b237-402b-b5ab-ca11967cc48f.mp4
-</p>
+
 
 ## 🎨 디자인 피드백 어디서 받을까?
 
@@ -28,7 +27,7 @@ AB 테스트는 두 가지 이상의 시안 중 UI UX 최적안을 선정하기 
   - 두가지 디자인(Hi-fi, Lo-fi) 시안 중 투표
   - 더 나은 디자인이라고 생각한 근거 쓰기
   - 투표 결과 및 다른 사람의 근거 확인하기
-  <img src="https://user-images.githubusercontent.com/98628614/172040037-a1fd49a1-efec-4ee0-a483-b35f7d3e483b.jpeg)"  width="444" height="920">
+  <img src="https://user-images.githubusercontent.com/98628614/172040037-a1fd49a1-efec-4ee0-a483-b35f7d3e483b.jpeg)" width="444" height="960">
   ![테스트 결과확인](https://user-images.githubusercontent.com/98628614/172040052-f7f239d6-e034-44b8-b275-bb9ac3ed790d.jpeg)
 
 
